@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -121,19 +122,12 @@ public class controllerVaccin implements Initializable {
     }
 
 
-
-    private Stage stge;
-    private Scene scene;
-    private AnchorPane root;
-
+    @FXML
+    private Button back;
     public void backHome(ActionEvent e) throws IOException {
         try {
-            root = FXMLLoader.load(getClass().getResource("../fxml/homevue.fxml"));
-            stge = (Stage)((Node)e.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stge.setScene(scene);
-            stge.setTitle("Vaccination");
-            stge.show();
+            Stage curent = (Stage) back.getScene().getWindow();
+            curent.close();
         }catch (Exception er){
             System.out.println(er.getCause());
         }
