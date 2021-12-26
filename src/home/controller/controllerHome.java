@@ -58,9 +58,10 @@ public class controllerHome implements Initializable {
     public void switchAddVaccin(ActionEvent e) throws IOException{
         try {
             root = FXMLLoader.load(getClass().getResource("../fxml/addVaccin.fxml"));
-            stge = (Stage)((Node)e.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stge.setScene(scene);
+            //stge = (Stage)((Node)e.getSource()).getScene().getWindow();
+            stge = new Stage();
+            //scene = new Scene(root);
+            stge.setScene(new Scene(root));
             stge.setResizable(false);
             stge.setTitle("Vaccination - Ajout de vaccin");
             stge.show();
